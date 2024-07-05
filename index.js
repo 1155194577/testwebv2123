@@ -5,11 +5,11 @@
 var os = require('os'); //for operating system-related utility methods and properties
 var express = require('express'); 
 var app = express();
-var http = require('http');//for creating http server
+// var http = require('http');//for creating http server
 
-app.set('view engine','ejs'); 
+// app.set('view engine','ejs'); 
 
-app.engine('ejs', require('ejs').__express);
+// app.engine('ejs', require('ejs').__express);
 
 //For signalling in WebRTC
 var socketIO = require('socket.io');
@@ -25,10 +25,10 @@ app.get("/", (req, res) => {
 });
 
 //Initialize http server and associate it with express
-var server = http.createServer(app);
+// var server = http.createServer(app);
 
 //Ports on which server should listen - 8000 or the one provided by the environment
-server.listen(process.env.PORT || 8000,()=>{
+app.listen(process.env.PORT || 8000,()=>{
 	console.log("server running!")
 });
 
